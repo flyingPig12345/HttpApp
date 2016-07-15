@@ -1,0 +1,20 @@
+1.yield()
+让步 ： 该方法与sleep()类似，只是不能由用户指定暂停多长时间，并且yield（）方法只能让同优先级的线程有执行的机会。
+2.sleep() 线程休眠XX毫秒
+
+3、join()
+(1)
+如果一个线程的代码块    a   在另一个 线程的代码块    b  之前   ，并且     a.join(),  那么  b线程会等待a线程执行完毕后进行执行 
+public static void main(String args[]){
+		for( int i = 0;i<5; i++){
+			try {
+				new SleepingThread().join();
+				System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+4.Daemon
+后台线程 : 必须在线程启动之前调用setDaemon()，才能设置为后台线程
+没有前台线程，后台线程自动终止
